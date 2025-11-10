@@ -1,40 +1,45 @@
-# Jupyter Notebook Documentation
+import pandas as pd
 
-Welcome to the **Jupyter Notebook** documentation site. **Jupyter Notebook**
-is a simplified notebook authoring application, and is a part of [Project
-Jupyter](https://docs.jupyter.org/en/latest/), a large umbrella project
-centered around the goal of providing tools (and [standards](https://docs.jupyter.org/en/latest/#sub-project-documentation))
-for interactive computing with [computational notebooks](https://docs.jupyter.org/en/latest/#what-is-a-notebook).
+# Datos del documento
+data = [
+    ["MZT202503", "AMBROS GONZALEZ DORA LIZBETH", ""],
+    ["MZT202504", "APARICIO ORTIZ WENDY NAYELI", ""],
+    ["MZT202505", "ARAMBULA MIRANDA FRANCISCO JAVIER", ""],
+    ["MZT202506", "ARREDONDO AREAN", ""],
+    ["MZT202507", "AYALA PEREZ KEM YAEL", ""],
+    ["MZT202508", "CABALLAS LOPEZ KIMBERLY GISELT", "BAJA"],
+    ["MZT202509", "CAMACHO TORRES MAYRA YARELI", ""],
+    ["MZT202510", "COTA SENA ANA GUADALUPE", ""],
+    ["MZT202511", "COTA VEGA MAYRA NAYELI", ""],
+    ["MZT202512", "DOMINGUEZ BARRANA SAUL ORLANDO", ""],
+    ["MZT202513", "FLORES LIZARRAGA ALFREDO", ""],
+    ["MZT202514", "GOMEZ CAMACHO ARIADNA", ""],
+    ["MZT202515", "LEYVA MIRANDA MARIA FERNANDA", ""],
+    ["MZT202516", "LEYVA RAMIREZ ANA FERNANDA", ""],
+    ["MZT202517", "LUGO GARCIA ANA KAREN", ""],
+    ["MZT202518", "LOPEZ GARCIA NAZARENA ARACELI", "BAJA"],
+    ["MZT202519", "MATORGA ALVAREZ WENDY ATENEA", ""],
+    ["MZT202520", "MEDINA GUILLARD LESLY YRIDIANA", ""],
+    ["MZT202521", "MENDOZA QUINTEROS AZUL ANGELIQUE", ""],
+    ["MZT202522", "MUÑOZ TORRES RAUL NICOLAS", ""],
+    ["MZT202523", "PALOMARES VALDEZ ANNET FERNANDA", "BAJA"],
+    ["MZT202524", "PEREZ GALINDO ERIK DANIEL", ""],
+    ["MZT202525", "PEREZ GALINDO KEVIN ORLANDO", ""],
+    ["MZT202526", "PEREZ MARIN IM JHOSSELIN", ""],
+    ["MZT202527", "PRADO ZAMORA LESLIE", ""],
+    ["MZT202528", "RAYGOZA SANDOVAL KENYA ISABEL", ""],
+    ["MZT202529", "RESENDIZ LOPEZ EDNA MELISSA", ""],
+    ["MZT202530", "REYES MARTINEZ JOSE DE JESUS", ""],
+    ["MZT202531", "ROMERO SALAZAR RODRIGO", ""],
+    ["MZT202532", "SALAZAR LAZARRAGA CARLOS ALEJANDRO", ""],
+    ["MZT202533", "VELAZQUEZ QUIÑONES MARIAN", ""],
+]
 
-A [computational notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook)
-is a shareable document that combines computer
-code, plain language descriptions, data, rich visualizations like 3D models,
-charts, graphs and figures, and interactive controls. A notebook, along with
-an editor like **Jupyter Notebook**, provides a fast interactive environment for
-prototyping and explaining code, exploring and visualizing data, and sharing
-ideas with others.
+# Crear DataFrame
+df = pd.DataFrame(data, columns=["MATRICULA", "NOMBRE DEL ALUMNO", "OBSERVACIONES"])
 
-**Jupyter Notebook** is a sibling to other notebook authoring applications under
-the Project Jupyter umbrella, like [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
-and [Jupyter Desktop](https://github.com/jupyterlab/jupyterlab-desktop).
-Jupyter Notebook offers a lightweight, simplified experience compared to JupyterLab.
+# Exportar a Excel
+excel_path = "Lista_Universidad_Pacifico_Norte_2025-2026.xlsx"
+df.to_excel(excel_path, index=False)
 
-Read more about how to use **Jupyter Notebook** on this site, in the [User
-Documentation](notebook.md).
-
-```{image} ./_static/images/notebook-running-code.png
-
-```
-
-- [Installation](https://jupyter.readthedocs.io/en/latest/install.html)
-- [Starting the Notebook](https://jupyter.readthedocs.io/en/latest/running.html)
-
-```{toctree}
-:maxdepth: 2
-
-user-documentation
-configuration
-migrate_to_notebook7
-contributor
-changelog
-```
+print("✅ Archivo Excel creado:", excel_path)
